@@ -161,10 +161,7 @@ class _Login extends State<Login> {
                             .then((value) {
                           if (value.token != "") {
                             Login.token = value.token;
-
                             Login.user = User.fromJson(value.user);
-
-                            print(Login.token);
                             Navigator.push(
                               context,
                               MaterialPageRoute(
