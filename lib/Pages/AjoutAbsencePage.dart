@@ -90,8 +90,6 @@ class _AjoutAbsence extends State<AjoutAbsence> {
                 isAllDay: false));
           }
         }
-
-
       });
     }
     for (int month = 1; month <= 12; month++) {
@@ -103,6 +101,9 @@ class _AjoutAbsence extends State<AjoutAbsence> {
             if (rdv.etat != "Annulé") {
               if (rdv.type == "téléphonique") {
                 meetings.add(Appointment(
+                    notes: '''Nom: ${rdv.info.nom} ${rdv.info.prenom}
+Type: ${rdv.type}
+Telephone: ${rdv.phone}''',
                     startTime: rdv.start.add(const Duration(hours: 2)),
                     endTime: rdv.end.add(const Duration(hours: 2)),
                     color: const Color.fromARGB(255, 206, 235, 255),
@@ -110,6 +111,9 @@ class _AjoutAbsence extends State<AjoutAbsence> {
               }
               if (rdv.type == "visio") {
                 meetings.add(Appointment(
+                    notes: '''Nom: ${rdv.info.nom} ${rdv.info.prenom}
+Type: ${rdv.type}
+Telephone: ${rdv.phone}''',
                     startTime: rdv.start.add(const Duration(hours: 2)),
                     endTime: rdv.end.add(const Duration(hours: 2)),
                     color: const Color.fromARGB(255, 232, 207, 255),
@@ -117,6 +121,9 @@ class _AjoutAbsence extends State<AjoutAbsence> {
               }
               if (rdv.type == "physique") {
                 meetings.add(Appointment(
+                    notes: '''Nom: ${rdv.info.nom} ${rdv.info.prenom}
+Type: ${rdv.type}
+Telephone: ${rdv.phone}''',
                     startTime: rdv.start.add(const Duration(hours: 2)),
                     endTime: rdv.end.add(const Duration(hours: 2)),
                     color: const Color.fromARGB(255, 233, 251, 254),
@@ -174,6 +181,31 @@ class _AjoutAbsence extends State<AjoutAbsence> {
                                     view: CalendarView.week,
                                     firstDayOfWeek: 1,
                                     dataSource: MeetingDataSource(meetings),
+                                    showWeekNumber: true,
+                                    onTap: (detail) {
+                                      Appointment appointment = Appointment(
+                                          startTime:
+                                              DateTime(DateTime.now().year),
+                                          endTime:
+                                              DateTime(DateTime.now().year));
+                                      if (detail.appointments != null) {
+                                        appointment = detail.appointments![0]
+                                            as Appointment;
+                                      }
+
+                                      if (appointment.notes != null) {
+                                        showDialog(
+                                            context: context,
+                                            builder: (context) => AlertDialog(
+                                                  content: Text(
+                                                      appointment.notes!,
+                                                      style: const TextStyle(
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.w700)),
+                                                ));
+                                      }
+                                    },
                                     timeSlotViewSettings:
                                         const TimeSlotViewSettings(
                                       startHour: 8,
