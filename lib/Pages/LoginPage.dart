@@ -5,9 +5,6 @@ import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:tradlibre/Pages/ReservationPage.dart';
 import 'package:tradlibre/Service/login_service.dart';
 import '../Model/login.dart';
-import '../Model/reserve.dart';
-import '../Service/reserve_service.dart';
-import '../Service/semaine_service.dart';
 import '../Widgets/AlertBox.dart';
 import '../Widgets/BlackButton.dart';
 
@@ -166,8 +163,6 @@ class _Login extends State<Login> {
                             Login.token = value.token;
 
                             Login.user = User.fromJson(value.user);
-
-                            print(Login.token);
                             Navigator.push(
                               context,
                               MaterialPageRoute(

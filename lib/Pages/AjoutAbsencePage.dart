@@ -90,8 +90,8 @@ class _AjoutAbsence extends State<AjoutAbsence> {
                 isAllDay: false));
           }
         }
-        //setState(() {});
-        print(meetings.length);
+
+
       });
     }
     for (int month = 1; month <= 12; month++) {
@@ -125,7 +125,6 @@ class _AjoutAbsence extends State<AjoutAbsence> {
             }
           }
         }
-        print(meetings.length);
       });
     }
     return Scaffold(
