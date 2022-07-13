@@ -91,7 +91,6 @@ class _Reservation extends State<Reservation> {
                                   GestureDetector(
                                       onTap: () {
                                         changedDate = selectedDate;
-                                        print(changedDate);
                                         ReserveService()
                                             .postReserve(
                                                 Login.token.toString(),
