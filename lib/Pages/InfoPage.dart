@@ -129,6 +129,7 @@ class _Infos extends State<Infos> {
                 buttonHeight: 55,
                 buttonWidth: MediaQuery.of(context).size.width,
                 buttonDecoration: BoxDecoration(
+                  
                   color: Colors.white,
                   border: Border.all(
                       width: 3,
@@ -137,7 +138,7 @@ class _Infos extends State<Infos> {
                 ),
                 dropdownItems: genderList,
                 hint: 'select',
-                onChanged: (value) {
+                onChanged: (value) {                 
                   setState(() {
                     genderValue = value!;
                     user.gender = genderValue;
@@ -165,7 +166,7 @@ class _Infos extends State<Infos> {
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
               child: MultiSelectDialogField(
-                cancelText: const Text("Annuler"),
+                cancelText: const Text("Annuler", style: TextStyle(fontSize: 15),),
                 searchable: true,
                 buttonText: const Text(
                   "Langues choisies",
