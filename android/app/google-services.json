@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "502307153628",
+    "project_id": "tradlibre-notification",
+    "storage_bucket": "tradlibre-notification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502307153628:android:4ebf76ad3be5f93d773619",
+        "android_client_info": {
+          "package_name": "com.example.tradlibre"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502307153628-qfonl7qfin98fvsdrohji0obsmn1sdad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRwNyZWo-zKQlZUtt-rr-oNd5MuR1wYew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502307153628-qfonl7qfin98fvsdrohji0obsmn1sdad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -159,6 +159,7 @@ class _Login extends State<Login> {
                             .then((value) {
                           if (value.token != "") {
                             Login.token = value.token;
+                            print(Login.token);
                             Login.user = User.fromJson(value.user);
                             Navigator.push(
                               context,
